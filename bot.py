@@ -8,11 +8,20 @@ from dotenv import load_dotenv
 
 from handlers import (
     handler_start,
+    handler_sticker,
+    handler_photo,
+    handler_contacts,
+    handler_basket,
+    handler_catalog,
+
     handler_echo,
 )
 
 logger = logging.getLogger(__name__)
 load_dotenv()
+bot: Bot = Bot(token=os.getenv('BOT_TOKEN'))
+dp: Dispatcher = Dispatcher()
+
 
 # Запуск бота
 async def main():
@@ -22,11 +31,14 @@ async def main():
     )
     logger.info("Starting bot")
 
-    bot: Bot = Bot(token=os.getenv('BOT_TOKEN'))
-    dp: Dispatcher = Dispatcher()
-
     dp.include_routers(
         handler_start.router,
+        handler_sticker.router,
+        handler_photo.router,
+        handler_contacts.router,
+        handler_basket.router,
+        handler_catalog.router,
+
         handler_echo.router,
     )
 

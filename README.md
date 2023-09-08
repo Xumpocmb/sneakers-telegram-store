@@ -1,3 +1,3 @@
-# Xumpocmb Telegram Bot
+# sneakers store
 
 *work in progress*
