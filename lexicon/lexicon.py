@@ -7,4 +7,5 @@ LEXICON_RU: dict[str, str] = {
                 'GitHub: https://github.com/Xumpocmb',
     'basket': 'BASKET',
     'catalog': 'CATALOG',
+    'admin_panel': 'Администратор, вот твоя панель управления!',
 }

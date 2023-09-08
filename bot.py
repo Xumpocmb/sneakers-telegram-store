@@ -13,6 +13,7 @@ from handlers import (
     handler_contacts,
     handler_basket,
     handler_catalog,
+    handler_admin_panel,
 
     handler_echo,
 )
@@ -38,6 +39,7 @@ async def main():
         handler_contacts.router,
         handler_basket.router,
         handler_catalog.router,
+        handler_admin_panel.router,
 
         handler_echo.router,
     )
