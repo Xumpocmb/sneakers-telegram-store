@@ -6,6 +6,6 @@ LEXICON_RU: dict[str, str] = {
     'contacts': 'Telegram: @xumpocmb\n'
                 'GitHub: https://github.com/Xumpocmb',
     'basket': 'BASKET',
-    'catalog': 'CATALOG',
+    'catalog': 'Каталог товаров.\nВыберите из ассортимента:',
     'admin_panel': 'Администратор, вот твоя панель управления!',
 }
