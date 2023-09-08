@@ -8,6 +8,7 @@ from lexicon.lexicon import LEXICON_RU
 from filter.admin import AdminFilter
 
 from time import sleep
+from bot_db.bot_database import cmd_start_db
 
 router: Router = Router()
 
@@ -16,7 +17,8 @@ router: Router = Router()
 @router.message(Command('start'))
 async def cmd_admin_start(message: Message):
     await message.answer(f'Hello, {message.from_user.username}!')
-    sleep(1.5)
+    sleep(1)
+    await cmd_start_db(message)
     await message.answer(text=LEXICON_RU['start'], reply_markup=admin_main_menu_keyboard)
 
 

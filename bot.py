@@ -16,8 +16,12 @@ from handlers import (
 
     handler_echo,
 )
+from handlers.callbacks import (
+    callback_queries
+)
+
 from settings.bot_menu import set_main_menu
-from  bot_db.bot_database import db_start
+from bot_db.bot_database import db_start
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(
@@ -43,6 +47,8 @@ async def main():
         handler_basket.router,
         handler_catalog.router,
         handler_admin_panel.router,
+
+        callback_queries.router,
 
         handler_echo.router,
     )
