@@ -3,7 +3,7 @@ from aiogram import Router
 from aiogram.types import Message
 
 from filter.admin import AdminFilter
-from keyboards.admin_panel import admin_panel_keyboard
+from keyboards.keyboard_admin_panel import admin_panel_keyboard
 from lexicon.lexicon import LEXICON_RU
 
 router: Router = Router()

@@ -60,5 +60,28 @@ async def cmd_start_db(message: Message):
             db.close()
 
 
+async def db_add_item(item_data):
+    categories = {
+        'майки': 1,
+    }
+    db, db_cursor = run_connection()
+    try:
+        """
+        INSERT INTO items (category_id, item_name, item_description, item_price) Values (1, "Футболка женская Protest", "Укороченная футболка Protest с оригинальным принтом отлично подойдет для активного отдыха у воды в период пляжного сезона.", 24)
+        """
+        db_cursor.execute(
+            'INSERT INTO items (category_id, item_name, item_description, item_price, item_photo) Values (?, ?, ?, ?, ?)',
+            (categories.get(item_data['category'], 1), item_data['name'], item_data['description'], item_data['price'], item_data['photo']))
+        db.commit()
+    except sqlite3.Error as e:
+        print("Ошибка SQLite:", e)
+    finally:
+        if db_cursor:
+            db_cursor.close()
+        if db:
+            db.close()
+
+
+
 if __name__ == '__main__':
     db_start()

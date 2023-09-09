@@ -3,7 +3,7 @@ from aiogram.filters import Command
 from aiogram.types import Message
 
 from keyboards.main_menu import main_menu_keyboard
-from keyboards.admin_main_menu import admin_main_menu_keyboard
+from keyboards.keyboard_admin_main_menu import admin_main_menu_keyboard
 from lexicon.lexicon import LEXICON_RU
 from filter.admin import AdminFilter
 

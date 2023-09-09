@@ -3,7 +3,7 @@ from aiogram import Router
 from aiogram.types import Message
 
 
-from keyboards.catalog_menu.catalog_keyboard import catalog_keyboard
+from keyboards.catalog_menu.keyboard_catalog import catalog_keyboard
 from lexicon.lexicon import LEXICON_RU
 
 router: Router = Router()

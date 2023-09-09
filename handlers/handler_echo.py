@@ -2,7 +2,7 @@ from aiogram import Router
 from aiogram.types import Message
 
 from filter.admin import AdminFilter
-from keyboards.admin_main_menu import admin_main_menu_keyboard
+from keyboards.keyboard_admin_main_menu import admin_main_menu_keyboard
 from keyboards.main_menu import main_menu_keyboard
 from lexicon.lexicon import LEXICON_RU
 

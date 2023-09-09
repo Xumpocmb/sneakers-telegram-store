@@ -3,6 +3,8 @@ import logging
 import os
 
 from aiogram import Bot, Dispatcher
+from aiogram.fsm.strategy import FSMStrategy
+from aiogram.fsm.storage.memory import MemoryStorage
 from dotenv import load_dotenv
 
 from handlers import (
@@ -13,6 +15,7 @@ from handlers import (
     handler_basket,
     handler_catalog,
     handler_admin_panel,
+    handler_add_item,
 
     handler_echo,
 )
@@ -31,7 +34,7 @@ logging.basicConfig(
 
 load_dotenv()
 bot: Bot = Bot(token=os.getenv('BOT_TOKEN'))
-dp: Dispatcher = Dispatcher()
+dp: Dispatcher = Dispatcher(storage=MemoryStorage(), fsm_strategy=FSMStrategy.USER_IN_CHAT)
 
 
 # Запуск бота
@@ -41,6 +44,7 @@ async def main():
 
     dp.include_routers(
         handler_start.router,
+        handler_add_item.router,
         handler_sticker.router,
         handler_photo.router,
         handler_contacts.router,
