@@ -3,11 +3,11 @@ from aiogram import Router
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 
-from filter.admin import AdminFilter
+from filter.filter_admin import AdminFilter
 from keyboards.keyboard_admin_main_menu import admin_main_menu_keyboard
 from keyboards.keyboard_cancel import cancel_keyboard
 from keyboards.keyboard_choose_category import choose_category_keyboard
-from states.add_item_states import AddItemState
+from states.states_add_item import AddItemState
 from bot_db.bot_database import db_add_item
 
 router: Router = Router()

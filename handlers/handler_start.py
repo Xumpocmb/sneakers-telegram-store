@@ -2,10 +2,10 @@ from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
 
-from keyboards.main_menu import main_menu_keyboard
+from keyboards.keyboard_main_menu import main_menu_keyboard
 from keyboards.keyboard_admin_main_menu import admin_main_menu_keyboard
 from lexicon.lexicon import LEXICON_RU
-from filter.admin import AdminFilter
+from filter.filter_admin import AdminFilter
 
 from time import sleep
 from bot_db.bot_database import cmd_start_db
